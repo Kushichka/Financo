@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+if(!isset($_SESSION["mail"])) {
+    header('Location: index.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,44 +22,52 @@
 </head>
 
 <body>
-    <header class="header-wrapper">
+    <header class="header__wrapper">
         <div class="container">
             <div class="header">
-                <a class="logo" href="#">Financo</a>
+                <a class="logo" href="index.html">Financo</a>
                 <nav class="navbar">
-                    <a class="menu-btn active-btn" href="#">Счета</a>
-                    <a class="menu-btn" href="#">Переводы</a>
-                    <a class="menu-btn" href="#">Отчет</a>
-                    <a class="menu-btn" href="#">Настройки</a>
+                    <a class="menu__btn active__btn" href="bills.php">Счета</a>
+                    <a class="menu__btn" href="#">Переводы</a>
+                    <a class="menu__btn" href="#">Отчет</a>
+                    <a class="menu__btn" href="#">Настройки</a>
                 </nav>
-                <div class="login-wrapper">
-                    <a class="login-btn menu-btn" href="#">JohnyPlay</a>
+                <div class="login__wrapper">
+                    <form action="script/logout.php">
+                        <input class="login__btn menu__btn" type="submit" value="Выйти">
+                    </form>
                 </div>
             </div>
         </div>
     </header>
-    <section class="content-wrapper">
-        <div class="container-s">
-            <div class="box-wrapper">
+    <section class="content__wrapper">
+        <div class="container__s">
+            <div class="box__wrapper">
                 <div id="box">
                     <h1>Ваши счета</h1>
                     <div class="raw">
                         <p class="title">Наличные</p>
-                        <p class="amount">1236987,0 <span class="currency">zł</span></p>
+                        <p class="amount">1236987</p>
+                        <p class="currency">zł</p>
+                        <a id="edit__value" href="#"></a>
                     </div>
                     <div class="raw">
                         <p class="title">Карта</p>
-                        <p class="amount">542369,0 <span class="currency">zł</span></p>
+                        <p class="amount">542369</p>
+                        <p class="currency">zł</p>
+                        <a id="edit__value" href="#"></a>
                     </div>
                     <div class="raw">
                         <p class="title">Сбережения</p>
-                        <p class="amount">236447,0 <span class="currency">zł</span></p>
+                        <p class="amount">236447</p>
+                        <p class="currency">zł</p>
+                        <a id="edit__value" href="#"></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="footer-wrapper">
+    <footer class="footer__wrapper">
         <div class="container">
             <div class="footer">
                 <p class="sign">Designed by Viktor Dariienko</p>
