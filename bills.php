@@ -33,7 +33,8 @@ if(!isset($_SESSION["mail"])) {
                     <a class="menu__btn" href="#">Настройки</a>
                 </nav>
                 <div class="login__wrapper">
-                    <form action="script/logout.php">
+                    <form action="index.php">
+                        <input type="hidden" name="action" value="signout">
                         <input class="login__btn menu__btn" type="submit" value="Выйти">
                     </form>
                 </div>

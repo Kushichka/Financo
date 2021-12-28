@@ -186,19 +186,26 @@ a {
   margin-bottom: 5px;
 }
 
-.msg-box {
+.error-msg, .succes-msg {
   position: absolute;
   top: 0;
   width: 100%;
   text-align: center;
-  background-color: #28a745;
   padding: 10px 0;
   animation: msg-anim 3s linear forwards;
 }
 
-.msg-box .msg {
+.error-msg .msg, .succes-msg .msg {
   font-size: 17px;
   color: #fff;
+}
+
+.error-msg {
+  background-color: #dc3545;
+}
+
+.succes-msg {
+  background-color: #28a745;
 }
 
 .index-container {
@@ -228,14 +235,14 @@ a {
   margin: 0;
 }
 
-.auth form {
+.auth .auth__register-form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 25px 15px;
 }
 
-.auth form input {
+.auth .auth__register-form input {
   box-sizing: border-box;
   outline: none;
   border: 1px solid #adadad;
@@ -246,11 +253,11 @@ a {
   font-size: 18px;
 }
 
-.auth form input:not(:last-child) {
+.auth .auth__register-form input:not(:last-child) {
   margin-bottom: 20px;
 }
 
-.auth form label {
+.auth .auth__register-form label {
   position: relative;
   width: 50px;
   height: 50px;
@@ -258,7 +265,7 @@ a {
   cursor: pointer;
 }
 
-.auth form label img {
+.auth .auth__register-form label img {
   position: absolute;
   top: 50%;
   right: 50%;
@@ -273,6 +280,10 @@ a {
   box-sizing: border-box;
   width: 100%;
   background-color: #06266F;
+}
+
+.auth__register-login {
+  width: 30%;
 }
 
 .auth__register-btn, .auth__login-btn {
@@ -295,7 +306,7 @@ a {
 }
 
 .auth__login-btn {
-  width: 30%;
+  width: 100%;
   border-left: 1px solid #fff;
 }
 

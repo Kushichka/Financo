@@ -179,18 +179,24 @@ a {
 }
 
 //////////////index//////////////////
-.msg-box {
+.error-msg, .succes-msg {
     position: absolute;
     top: 0;
     width: 100%;
     text-align: center;
-    background-color: #28a745;
     padding: 10px 0;
     animation: msg-anim 3s linear forwards;
     .msg {
         font-size: 17px;
         color: #fff;
     }
+}
+
+.error-msg {
+    background-color: #dc3545;
+}
+.succes-msg {
+    background-color: #28a745;
 }
 
 .index-container {
@@ -218,7 +224,7 @@ a {
             margin: 0;
         }
     }
-    form {
+    .auth__register-form {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -262,6 +268,9 @@ a {
         width: 100%;
         background-color: #06266F;
     }
+    &__register-login {
+        width: 30%;
+    }
     &__register-btn, &__login-btn {
         display: block;
         font-size: 18px;
@@ -279,7 +288,8 @@ a {
         width: 70%;
     }
     &__login-btn {
-        width: 30%;
+        // width: 30%;
+        width: 100%;
         border-left: 1px solid #fff;
     }
 
