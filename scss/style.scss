@@ -1,3 +1,8 @@
+$bg: #4671D5;
+$white: #fff;
+$btn: #06266F;
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,13 +12,13 @@
 body {
     font-family: 'Roboto', sans-serif;
     position: relative;
-    background-color: #4671D5;
+    background-color: $bg;
     cursor: default;
 }
 
 a {
     text-decoration: none;
-    color: #fff;
+    color: $white;
 }
 
 .container {
@@ -24,37 +29,31 @@ a {
 .menu__btn {
     display: block;
     padding: 20px 15px;
+    color: $btn;
+    font-size: 17px;
+    font-weight: 700;
     &:hover {
-        background-color: #3c5285;
-    }
-    &:active {
-        background-color: #374f85;
+        color: $bg;
     }
 }
 
 .header__wrapper {
-    background-color: #2A4480;
+    background-color: $white;
 
     .active__btn {
-        background-color: #06266F;
-
-        &:hover {
-            background-color: #153070;
-        }
-        &:active {
-            background-color: #0f2d74;
-        }
+        background-color: $bg;
+        color: $white;
     }
     .header {
-        background-color: #2A4480;
+        background-color: $white;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-items: center;
         
         .logo {
+            color: $btn;
             font-weight: 700;
             font-size: 32px;
-            // padding-left: 15px;
             margin: 0 15px;
             user-select: none;
         }
@@ -65,23 +64,54 @@ a {
         .login__wrapper {
             justify-self: end;
             margin: 0 15px;
+            position: relative;
 
+            // &:hover {
+            //     .login__wrapper-dropdown {
+            //         display: block;
+            //     }
+            // }
+            .login__wrapper-dropdown {
+                position: absolute;
+                bottom: -100%;
+                left: 0;
+                background-color: $white;
+                width: 100%;
+                display: none;
+                
+                form {
+                    display: flex;
+                    justify-content: center;
+                }
+                a {
+                    text-align: center;
+                    color: $btn;
+                    display: block;
+                }
+            }
+            // &::after {
+            //     content: '';
+            //     position: absolute;
+            //     bottom: calc(-100% -1px);
+            //     left: -50%;
+            //     width: 200%;
+            //     height: 200%;
+            //     background-color: $white;
+            //     // border: 1px solid $btn;
+            // }
             .login__btn {
-                background-color: #2A4480;
+                background-color: $white;
+                color: $btn;
                 display: block;
                 border: none;
-                color: #fff;
                 font-family: 'Roboto', sans-serif;
-                font-size: 16px;
-                // font-weight: 700;
                 cursor: pointer;
-                // padding: 20px 15px;
                 &:hover {
-                    background-color: #3c5285;
+                    color: $bg;
                 }
-                &:active {
-                    background-color: #374f85;
-                }
+                // &:active {
+                //     background-color: #374f85;
+                // }
             }
         }
     }   
@@ -96,8 +126,9 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #06266F;
-        color: #fff;
+        background-color: $white;
+        color: $btn;
+        box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
         margin: 100px 0;
         padding: 25px;
 
@@ -133,11 +164,11 @@ a {
                     background-image: url(../img/edit.png);
                     background-size: 25px 25px;
                     justify-self: end;
-                    filter: invert(1);
+                    // filter: invert(1);
                 }
                 &:not(:last-child) {
                     // margin-bottom: 20px;
-                    border-bottom: 1px solid #6C8CD5;
+                    border-bottom: 1px solid $btn;
                     padding-bottom: 10px;
                 }
                 &:not(:first-child) {
@@ -185,10 +216,10 @@ a {
     width: 100%;
     text-align: center;
     padding: 10px 0;
-    animation: msg-anim 3s linear forwards;
+    animation: msg-anim 3s ease forwards;
     .msg {
         font-size: 17px;
-        color: #fff;
+        color: $white;
     }
 }
 
@@ -208,7 +239,7 @@ a {
 }
 
 .auth {
-    background-color: #fff;
+    background-color: $white;
     width: 400px;
     margin: 15px;
     box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
@@ -219,7 +250,7 @@ a {
 
         h1 {
             font-size: 24px;
-            color: #06266F;
+            color: $btn;
             text-align: center;
             margin: 0;
         }
@@ -234,7 +265,7 @@ a {
             box-sizing: border-box;
             outline: none;
             border: 1px solid #adadad;
-            color: #adadad;
+            color: $btn;
             width: 300px;
             height: 50px;
             padding: 0 15px;
@@ -248,7 +279,7 @@ a {
             position: relative;
             width: 50px;
             height: 50px;
-            background-color: #06266F;
+            background-color: $btn;
             cursor: pointer;
 
             img {
@@ -266,7 +297,7 @@ a {
         display: flex;
         box-sizing: border-box;
         width: 100%;
-        background-color: #06266F;
+        background-color: $btn;
     }
     &__register-login {
         width: 30%;
@@ -276,9 +307,9 @@ a {
         font-size: 18px;
         padding: 15px 0;
         text-align: center;
-        color: #fff;
+        color: $white;
         border: none;
-        background-color: #06266F;
+        background-color: $btn;
         cursor: pointer;
         &:hover {
             background-color: #3c5285;
@@ -290,7 +321,7 @@ a {
     &__login-btn {
         // width: 30%;
         width: 100%;
-        border-left: 1px solid #fff;
+        border-left: 1px solid $white;
     }
 
 }
@@ -299,17 +330,19 @@ a {
 @keyframes msg-anim {
     0% {
         transform: translateY(-50px);
-        opacity: 1;
+        // opacity: 1;
     }
     30% {
         transform: translateY(0);
-        opacity: 1;
+        // opacity: 1;
     }
-    95% {
-        opacity: 1;
+    70% {
+        // opacity: 1;
+        transform: translateY(0);
     }
     100% {
-        opacity: 0;
+        // opacity: 0;
+        transform: translateY(-50px);
     }
 }
 

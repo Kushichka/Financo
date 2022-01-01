@@ -1,22 +1,26 @@
 'use strict';
 
-const raw = document.querySelectorAll('.raw'),
-      amount = document.querySelectorAll('.amount'),
-      title = document.querySelectorAll('.title'),
-      edit = document.querySelector('#edit-value');
+const loginBtn = document.getElementById('login-btn'),
+      loginDropDown = document.querySelector('.login__wrapper-dropdown'),
+      navbar = document.querySelector('.navbar'),
+      menuBtn = document.querySelectorAll('.menu__btn');
 
-for(let i = 0; i < raw.length; i++) {
-    raw[i].addEventListener('click', e => {
-        if(e.target.id == 'edit-value') {
-            let sum = +prompt(`Изменение баланса на счету '${title[i].firstChild.data}'`);
-            let value = +amount[i].firstChild.data;
-            // console.log(typeof(sum));
-            if(sum == '' || isNaN(sum) == true) {
-                amount[i].textContent = value;
-            } else {
-                amount[i].textContent = sum;
+loginBtn.addEventListener('click', e => {
+    if(loginDropDown.style.display == 'block') {
+        loginDropDown.style.display = 'none';
+    } else {
+        loginDropDown.style.display = 'block';
+    }
+});
+
+navbar.addEventListener('click', e => {
+    if(e.target.className == 'menu__btn') {
+        menuBtn.forEach(item => {
+            if(item.classList.contains('active__btn')) {
+                item.classList.remove('active__btn');
             }
-        }
-    });
-}
+        });
+        e.target.classList.add('active__btn');
+    }
+});
 

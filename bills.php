@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(!isset($_SESSION["mail"])) {
+if(!isset($_SESSION["login"])) {
     header('Location: index.php');
 }
 
@@ -25,7 +25,7 @@ if(!isset($_SESSION["mail"])) {
     <header class="header__wrapper">
         <div class="container">
             <div class="header">
-                <a class="logo" href="index.html">Financo</a>
+                <a class="logo" href="index.php">Financo</a>
                 <nav class="navbar">
                     <a class="menu__btn active__btn" href="bills.php">Счета</a>
                     <a class="menu__btn" href="#">Переводы</a>
@@ -33,10 +33,13 @@ if(!isset($_SESSION["mail"])) {
                     <a class="menu__btn" href="#">Настройки</a>
                 </nav>
                 <div class="login__wrapper">
-                    <form action="index.php">
-                        <input type="hidden" name="action" value="signout">
-                        <input class="login__btn menu__btn" type="submit" value="Выйти">
-                    </form>
+                    <button class="login__btn menu__btn" type="button" id="login-btn">JohnyPlay</button>
+                    <div class="login__wrapper-dropdown">
+                        <form action="index.php">
+                            <input type="hidden" name="action" value="signout">
+                            <input class="login__btn menu__btn" type="submit" value="Выйти">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
