@@ -1,9 +1,9 @@
 <?php
-
-session_start();
-if(!isset($_SESSION["login"])) {
-    header('Location: index.php');
-}
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header('Location: /financo');
+        exit;
+    }
 
 ?>
 
@@ -24,8 +24,13 @@ if(!isset($_SESSION["login"])) {
 <body>
     <header class="header__wrapper">
         <div class="container">
+            <!-- <?php 
+                echo $_SESSION["login"];
+                echo $_REQUEST['signout'];
+                echo print_r($_SESSION);
+            ?>-->
             <div class="header">
-                <a class="logo" href="index.php">Financo</a>
+                <a class="logo" href="/financo">Financo</a>
                 <nav class="navbar">
                     <a class="menu__btn active__btn" href="bills.php">Счета</a>
                     <a class="menu__btn" href="#">Переводы</a>
@@ -35,8 +40,8 @@ if(!isset($_SESSION["login"])) {
                 <div class="login__wrapper">
                     <button class="login__btn menu__btn" type="button" id="login-btn">JohnyPlay</button>
                     <div class="login__wrapper-dropdown">
-                        <form action="index.php">
-                            <input type="hidden" name="action" value="signout">
+                        <form action="signout">
+                            <!-- <input type="hidden" name="action" value="signout"> -->
                             <input class="login__btn menu__btn" type="submit" value="Выйти">
                         </form>
                     </div>

@@ -1,9 +1,18 @@
+<?php
+
+    if(isset($_SESSION["login"])) {
+        header('Location: bills.php');
+        exit;
+    }
+
+?>
+
 <div class="auth">
             <div class="auth-title">
                 <h1>Регистрация</h1>
             </div>
-            <form class="auth__register-form" action="index.php" method="post" id="register-form">
-                <input type="hidden" name="action" value="signup">
+            <form class="auth__register-form" action="signup" method="post" id="register-form">
+                <!-- <input type="hidden" name="action" value="signup"> -->
 
                 <label class="login-img" for="login"><img src="img/login.png" alt="login icon"></label>
                 <input class="register__input-login" id="login" type="text" name="login" placeholder="Логин" required>
@@ -16,9 +25,10 @@
             </form>
             <div class="auth-btns">
                 <input class="auth__register-btn" form="register-form" type="submit" value="Регистрация">
-                <form class="auth__register-login" action="index.php" method="post">
-                    <input type="hidden" name="action" value="login">
+                <form class="auth__register-login" action="login">
+                    <!-- <input type="hidden" name="action" value="login"> -->
                     <input class="auth__login-btn" type="submit" value="Войти">
+                    <!-- <a href="/financo/login">Войти</a> -->
                 </form>
             </div>
         </div>

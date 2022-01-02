@@ -66,17 +66,13 @@ a {
             margin: 0 15px;
             position: relative;
 
-            // &:hover {
-            //     .login__wrapper-dropdown {
-            //         display: block;
-            //     }
-            // }
             .login__wrapper-dropdown {
                 position: absolute;
                 bottom: -100%;
                 left: 0;
                 background-color: $white;
                 width: 100%;
+                box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.3);
                 display: none;
                 
                 form {
@@ -89,16 +85,6 @@ a {
                     display: block;
                 }
             }
-            // &::after {
-            //     content: '';
-            //     position: absolute;
-            //     bottom: calc(-100% -1px);
-            //     left: -50%;
-            //     width: 200%;
-            //     height: 200%;
-            //     background-color: $white;
-            //     // border: 1px solid $btn;
-            // }
             .login__btn {
                 background-color: $white;
                 color: $btn;
@@ -109,9 +95,6 @@ a {
                 &:hover {
                     color: $bg;
                 }
-                // &:active {
-                //     background-color: #374f85;
-                // }
             }
         }
     }   

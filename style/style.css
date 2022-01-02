@@ -74,6 +74,7 @@ a {
   left: 0;
   background-color: #fff;
   width: 100%;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.3);
   display: none;
 }
 
