@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,15 +13,30 @@
 </head>
 
 <body>
-    <div class="index-container">
-    <?php
-    if (isset($_SESSION['error-msg'])) {
-        echo '<div class="error-msg"><p class="msg">'.$_SESSION['error-msg'].'</p></div>';
-    }
-    unset($_SESSION['error-msg']);
-    
-    if (isset($_SESSION['succes-msg'])) {
-        echo '<div class="succes-msg"><p class="msg">'.$_SESSION['succes-msg'].'</p></div>';
-    }
-    unset($_SESSION['succes-msg']);
-?>
+    <header class="header__wrapper">
+        <div class="container">
+            <!-- <?php 
+                echo $_SESSION["login"];
+                echo $_REQUEST['signout'];
+                echo print_r($_SESSION);
+            ?> -->
+            <div class="header">
+                <a class="logo" href="/financo">Financo</a>
+                <nav class="navbar">
+                    <a class="menu__btn active__btn" href="bills">Счета</a>
+                    <a class="menu__btn" href="#">Переводы</a>
+                    <a class="menu__btn" href="#">Отчет</a>
+                    <a class="menu__btn" href="#">Настройки</a>
+                </nav>
+                <div class="login__wrapper">
+                    <button class="login__btn menu__btn" type="button" id="login-btn"><?php echo $_SESSION['login'];?></button>
+                    <div class="login__wrapper-dropdown">
+                        <form action="signout">
+                            <!-- <input type="hidden" name="action" value="signout"> -->
+                            <input class="login__btn menu__btn" type="submit" value="Выйти">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

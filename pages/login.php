@@ -1,11 +1,3 @@
-<?php
-
-    if(isset($_SESSION["login"])) {
-        header('Location: bills.php');
-        exit;
-    }
-
-?>
 
 <div class="auth">
             <div class="auth-title">
